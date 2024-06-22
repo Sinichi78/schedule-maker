@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="image-overlay">
+              
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="top-right">
+                <h2>Schedule Maker</h2>
+                <p>"Streamline your day with our easy schedule maker."</p>
+            </div>
+          
+            <div id="mainMenu" class="menu">
+                <button onclick="showTab('addCourse')">Add Course</button>
+                <button onclick="showTab('removeCourse')">Remove Course</button>
+                <button onclick="showTab('viewSchedule')">View Schedule</button>
+              
+            </div>
+
+            <div id="addCourse" class="tab">
+                <h2>Add Course</h2>
+                <input type="datetime-local" id="datetime" placeholder="Date and Time">
+                <input type="text" id="courseName" placeholder="Course Name">
+                <div class="buttonCourse">
+                    <button onclick="addCourse()">Add</button>
+                    <button onclick="showMainMenu()">Back to Menu</button>
+                </div>
+               
+            </div>
+
+            <div id="removeCourse" class="tab">
+                <h2>Remove Course</h2>
+                <h3>Current Schedule</h3>
+                <ul id="removeScheduleList"></ul>
+                <button onclick="removeSelectedCourse()">Remove</button>
+                <button onclick="showMainMenu()">Back to Menu</button>
+            </div>
+
+            <div id="viewSchedule" class="tab">
+                <h2>View Schedule</h2>
+                <ul id="scheduleList"></ul>
+                <div class="viewScheduleButton">
+                    <button onclick="exportToExcel()">Export to Excel</button>
+                    <button onclick="showMainMenu()">Back to Menu</button>
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
